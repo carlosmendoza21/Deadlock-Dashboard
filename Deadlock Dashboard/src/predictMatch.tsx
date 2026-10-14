@@ -41,8 +41,8 @@ export function predictMatch(match: ActiveMatch, now: number, inputs?: Predictio
   const rates = inputs?.heroWinRates ?? new Map<number, number>();
   return predict({
     elapsedS: elapsedOverride ?? elapsedOf(match, now),
-    netWorth: [match.net_worth_t0, match.net_worth_t1],
-    objectivesMask: [match.obj_mask_t0, match.obj_mask_t1],
+    netWorth: [match.net_worth_team_0, match.net_worth_team_1],
+    objectivesMask: [match.objectives_mask_team0, match.objectives_mask_team1],
     avgSkill: [teamSkill(match, 0, inputs?.ranks), teamSkill(match, 1, inputs?.ranks)],
     heroStrength: [heroStrength(heroes(0), rates), heroStrength(heroes(1), rates)],
     ranked: isRanked(match),

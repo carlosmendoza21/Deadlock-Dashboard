@@ -9,8 +9,8 @@ const TIERS = [
 ] as const;
 
 export function ObjectivesPanel({ match, side }: { match: ActiveMatch; side: 0 | 1 }) {
-  const nw = [match.net_worth_t0, match.net_worth_t1];
-  const masks = [match.obj_mask_t0, match.obj_mask_t1];
+  const nw = [match.net_worth_team_0, match.net_worth_team_1];
+  const masks = [match.objectives_mask_team0, match.objectives_mask_team1];
   const order = [side, (1 - side) as 0 | 1] as const;
   const lead = nw[side] - nw[1 - side];
 

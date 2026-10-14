@@ -19,10 +19,10 @@ export interface ActiveMatch{
     game_mode: number;
     game_mode_parsed: string;
     region_mode_parsed: string | null;
-    net_worth_t0: number;
-    net_worth_t1: number;
-    obj_mask_t0: number;
-    obj_mask_t1: number;
+    net_worth_team_0: number;
+    net_worth_team_1: number;
+    objectives_mask_team0: number;
+    objectives_mask_team1: number;
     spectators: number | null;
     match_score: number | null;
     players: ActiveMatchPlayer[];
@@ -124,7 +124,7 @@ const HOUR = 60 * MIN;
 // Different URLs (e.g. filtered by account_id vs. the full list) can serve snapshots of different ages.
 // Souls only ever go up during a match, so keep the freshest snapshot seen per match and never step back.
 const freshest = new Map<number, ActiveMatch>();
-const totalSouls = (m: ActiveMatch) => m.net_worth_t0 + m.net_worth_t1;
+const totalSouls = (m: ActiveMatch) => m.net_worth_team_0 + m.net_worth_team_1;
 function newestSnapshots(matches: ActiveMatch[]) {
   return matches.map(m => {
     const prev = freshest.get(m.match_id);

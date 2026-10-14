@@ -88,7 +88,7 @@ function MatchRow({ m, p }: { m: ActiveMatch; p: number }) {
           <div className="mr-heroes">
             {assets && team(t).map(pl => <HeroIcon key={pl.account_id} id={pl.hero_id} heroes={assets.heroes} size={30} />)}
           </div>
-          <span className="muted small">{formatSouls(t === 0 ? m.net_worth_t0 : m.net_worth_t1)} souls</span>
+          <span className="muted small">{formatSouls(t === 0 ? m.net_worth_team_0 : m.net_worth_team_1)} souls</span>
         </div>
       ))}
       <div className="mr-odds">
