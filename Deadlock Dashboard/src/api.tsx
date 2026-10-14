@@ -50,7 +50,7 @@ export interface AccountRank{
 
 export interface SteamProfile{
     account_id: number;
-    username: string;
+    personaname: string;
     avatar: string;
     profileurl: string;
 }

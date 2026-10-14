@@ -126,9 +126,9 @@ function SearchResults({ q }: { q: string }) {
         {data?.map(p => (
           <li key={p.account_id}>
             <a href={`#/player/${p.account_id}`}>
-              <img src={p.profileurl} alt="" width={40} height={40} />
+              <img src={p.avatar} alt="" width={40} height={40} />
               <span>
-                <b>{p.username}</b>
+                <b>{p.personaname}</b>
                 <span className="muted small">ID {p.account_id}</span>
               </span>
             </a>

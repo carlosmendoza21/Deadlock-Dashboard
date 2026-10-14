@@ -29,7 +29,7 @@ export function TeamRoster({ match, team, viewerId, people, assets }: {
                   <a className="player-cell" href={`#/player/${p.account_id}`}>
                     {assets && <HeroIcon id={p.hero_id} heroes={assets.heroes} size={36} />}
                     <span>
-                      <b>{profile?.profileurl ?? `Player ${p.account_id}`}</b>
+                      <b>{profile?.personaname ??`Player ${p.account_id}`}</b>
                       <span className="muted small">{hero?.name ?? `Hero ${p.hero_id}`}{p.abandoned ? ' · left the match' : ''}</span>
                     </span>
                   </a>

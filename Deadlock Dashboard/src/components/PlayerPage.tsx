@@ -18,7 +18,7 @@ export function PlayerPage({ accountId }: { accountId: number }) {
       <div className="player-head">
         {profile.data?.avatar && <img className="avatar" src={profile.data.avatar} alt="" width={56} height={56} />}
         <div>
-          <h2>{profile.data?.profileurl ?? `Player ${accountId}`}</h2>
+          <h2>{profile.data?.personaname ??`Player ${accountId}`}</h2>
           <div className="muted small">
             Account {accountId}
             {profile.data?.profileurl && <> · <a href={profile.data.profileurl} target="_blank" rel="noreferrer">Steam profile</a></>}
